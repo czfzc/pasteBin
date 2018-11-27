@@ -1,0 +1,85 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>mifanPastBin</title>
+<link href="{{url_for('static',filename='main.css')}}" rel="stylesheet" type="text/css">
+<link href="{{url_for('static',filename='bootstrap-4.0.0.css')}}" rel="stylesheet" type="text/css">
+<script src="{{url_for('static',filename='jquery-3.2.1.min.js')}}"></script>
+<script src="{{url_for('static',filename='popper.min.js')}}"></script>
+<script src="{{url_for('static',filename='bootstrap-4.0.0.js')}}"></script>
+<script src="{{url_for('static',filename='main.js')}}"></script>
+</head>
+
+<body>
+<div class="container-fluid">
+  <div class="container">
+	
+    <ul class="nav nav-pills">
+	    <li class="nav-item"> <a class="nav-link active" href="#">pasteBin</a> </li>
+	    <li class="nav-item"> <a class="nav-link" href="#">浏览</a> </li>
+	    <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">我发过的</a>
+	      <div class="dropdown-menu"> <a class="dropdown-item" href="#">公开</a> <a class="dropdown-item" href="#">私密</a> <a class="dropdown-item" href="#">阅后即焚</a>
+	        <div class="dropdown-divider"></div>
+	        <a class="dropdown-item" href="#">关于</a> </div>
+      </li>
+
+    </ul>
+	  
+	  <div class="jumbotron" style="width: 100%; margin:0 auto; height: inherit">
+	  <center>
+	  <h1 class="display-4" style="font-family: ">pastebin</h1>
+		<p style="font-size: 30px;">你的内容将发布出去</p>
+ 
+	    <form id="form" action="submitter" method="post" style="max-width: 400px">
+			  
+		  <div class="input-group mb-3">
+			   <div class="input-group-prepend">
+	        </div>
+			   <input type="text" name="title" id="title" class="form-control" placeholder="标题" value="">
+	    </div>
+ 
+		  <div class="input-group">
+			  <textarea type="text" id="content" name="content" style="margin: 0px auto;" rows="10" class="form-control"  placeholder="内容" ></textarea>
+			  </div>
+			
+			<input type="password" name="pass" id="pass" class="form-control" placeholder="密码(为空则公开)" value="" style="margin:15px auto;">
+			  
+			<div class="input-group mb-3">
+			
+			  <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="时限" id="timevalue" name="timevalue">
+			  <div class="input-group-append">
+			    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="subtime">时</button>
+			    <div class="dropdown-menu"> 
+					<div class="dropdown-item" href="" id="s" onClick="setTime(this)">秒</div>
+					<div class="dropdown-item" href="" id="m" onClick="setTime(this)">分</div>
+					<div class="dropdown-item" href="" id="h" onClick="setTime(this)">时</div>
+					<div class="dropdown-item" href="" id="d" onClick="setTime(this)">天</div> 
+					<div class="dropdown-item" href="" id="y" onClick="setTime(this)">年</div>
+			      <div role="separator" class="dropdown-divider"></div>
+			      <div class="dropdown-item" href="" id="p" onClick="setTime(this)">永久</div> </div>
+				  <input id="time" type="hidden" name="time" value="h"/>
+		      </div>
+		  </div>
+		  <input type="submit" value="ok" style="min-width:65px;min-height: 45px; " class="btn btn-primary"
+				 onclick="return checkform();">
+			  <div id="mes" style="margin-top: 10px;width:130px;">&nbsp</div>
+		  </form>
+		
+      </center>
+ 
+      <br>
+      
+<div class="footer">
+	pastebin.mifanblog.cn @ 2018
+	  </div>
+</div>
+	  
+	  
+	  
+  </div>
+</div>
+
+</body>
+</html>

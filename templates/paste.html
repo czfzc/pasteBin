@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>mifanPastBin</title>
+<link href="{{url_for('static',filename='main.css')}}" rel="stylesheet" type="text/css">
+<link href="{{url_for('static',filename='bootstrap-4.0.0.css')}}" rel="stylesheet" type="text/css">
+<script src="{{url_for('static',filename='jquery-3.2.1.min.js')}}"></script>
+<script src="{{url_for('static',filename='popper.min.js')}}"></script>
+<script src="{{url_for('static',filename='bootstrap-4.0.0.js')}}"></script>
+<script src="{{url_for('static',filename='main.js')}}"></script>
+</head>
+
+<body>
+<div class="container-fluid">
+  <div class="container">
+	
+    <ul class="nav nav-pills">
+	    <li class="nav-item"> <a class="nav-link" href="index.jsp">pasteBin</a> </li>
+	    <li class="nav-item"> <a class="nav-link active" href="scan.jsp">浏览</a> </li>
+	    <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">我发过的</a>
+	      <div class="dropdown-menu"> <a class="dropdown-item" href="#">公开</a> <a class="dropdown-item" href="#">私密</a> <a class="dropdown-item" href="#">阅后即焚</a>
+	        <div class="dropdown-divider"></div>
+	        <a class="dropdown-item" href="#">关于</a> </div>
+      </li>
+
+    </ul>
+	  
+	  <div class="jumbotron" style="width: 100%; margin:0 auto; height: inherit">
+	  <center>
+	  <h1 class="display-4" style="font-family: ">{{title}}</h1>
+		<p style="font-size: 30px;">{{subtitle}}</p>
+</center>
+		<div id="content">
+		  {{content}}
+		  </div>
+	    <br>
+      
+<div class="footer">
+	pastebin.mifanblog.cn @ 2018
+	  </div>
+</div>
+	  
+	  
+	  
+  </div>
+</div>
+
+</body>
+</html>
