@@ -10,6 +10,10 @@ import random
 app = Flask(__name__)
 
 @app.route("/")
+def getc():
+    return render_template("index.html")
+
+@app.route("/index.html")
 def gets():
     return render_template("index.html")
 
