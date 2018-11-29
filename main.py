@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*
 import MySQLdb
-db = MySQLdb.connect("127.0.0.1","root","4c82z3f69","mifan",charset="utf8")
-#db = MySQLdb.connect("mifanblog.cn","sq_pqrod64777","uvf8103","sq_pqrod64777",charset="utf8")
+db = MySQLdb.connect("127.0.0.1","root","","",charset="utf8")
 cursor=db.cursor()
 
 from flask import Flask , url_for,request,render_template,make_response,redirect
